@@ -52,7 +52,7 @@ case "$board_name" in
         ;;
     *)
         # 默认第一个接口为WAN，其余为LAN
-        wan_ifname=$(echo "$ifnames" | awk '{print $1}')
+        wan_ifname=$(echo "$ifnames" | awk '{print $4}')
         lan_ifnames=$(echo "$ifnames" | cut -d ' ' -f2-)
         echo "Using default mapping: WAN=$wan_ifname LAN=$lan_ifnames" >>"$LOGFILE"
         ;;
